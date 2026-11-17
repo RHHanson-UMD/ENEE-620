@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive original lesson about Gaussian conditional estimation, MMSE, residual independence, and singular covariance.">
+  <title>Gaussian conditional estimation | ENEE 620 Learning Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="./gaussian-conditioning.css">
+  <script src="../assets/course.js" defer></script><script type="module" src="./gaussian-conditioning.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to lesson</a>
+  <header class="site-header"><div class="container nav-row">
+    <a class="brand" href="../index.html"><span class="brand-mark">RH<span>.</span></span><span class="brand-label"><strong>ENEE 620</strong><small>Learning Lab</small></span></a>
+    <nav class="site-nav" aria-label="Primary"><a href="../index.html">Course home</a><a href="#experiment">Experiment</a><a href="#explain">Why it works</a></nav>
+    <div class="nav-actions"><button class="theme-button" id="theme-toggle" aria-label="Toggle theme" type="button">☾</button></div>
+  </div></header>
+  <main class="container lesson" id="main">
+    <p class="kicker">ENEE 620 / LATEST MATERIAL FIRST / LECTURE 20</p>
+    <h1>Gaussian conditional estimation<span class="period">.</span></h1>
+    <p class="lead">Move the correlation and observation to see why the best mean-square estimate is affine, why the error is independent of the observation, and when a Gaussian covariance becomes singular.</p>
+    <p class="context">This is an <strong>original scalar illustration</strong> of the vector-valued results discussed in the November 16, 2026 lecture. It is not a reproduction of instructor notes or an official course page.</p>
+    <section class="panel" aria-labelledby="model-title" id="experiment">
+      <div class="panel-heading"><div><span class="section-label">01 / EXPERIMENT</span><h2 id="model-title">Change the Gaussian model</h2></div>
+        <div class="actions"><button id="reset" type="button" class="lesson-button">Reset example</button><button id="resample" type="button" class="lesson-button secondary">New sample</button></div></div>
+      <p>Assume <strong>X</strong> and <strong>Y</strong> are jointly Gaussian, with zero means and positive standard deviations. Their correlation is <strong>ρ</strong>. This demo shows <strong>180 simulated points</strong>; the mathematical formulas below are exact.</p>
+      <div class="controls">
+        <label for="rho">Correlation ρ <output id="rho-value" for="rho">0.70</output><input id="rho" type="range" min="-1" max="1" step="0.05" value="0.7"></label>
+        <label for="observed">Observed Y = y <output id="observed-value" for="observed">1.00</output><input id="observed" type="range" min="-4" max="4" step="0.1" value="1"></label>
+        <label for="sigma-x">X standard deviation σX <output id="sigma-x-value" for="sigma-x">1.00</output><input id="sigma-x" type="range" min="0.5" max="3" step="0.25" value="1"></label>
+        <label for="sigma-y">Y standard deviation σY <output id="sigma-y-value" for="sigma-y">1.00</output><input id="sigma-y" type="range" min="0.5" max="3" step="0.25" value="1"></label>
+      </div>
+      <div class="stats" aria-live="polite" aria-atomic="true">
+        <div><span>MMSE estimate E[X | Y = y]</span><strong id="estimate">0.700</strong></div>
+        <div><span>Conditional variance / MMSE</span><strong id="variance">0.510</strong></div>
+        <div><span>Covariance determinant</span><strong id="determinant">0.510</strong></div>
+        <div><span>Sample correlation: Y vs error</span><strong id="residual-correlation">—</strong></div>
+      </div>
+      <p class="status-message" id="status" role="status"></p>
+      <div class="plots">
+        <figure><figcaption><strong>Joint samples</strong><span>Points (Y, X); solid line is E[X | Y]</span></figcaption><svg id="joint-plot" viewBox="0 0 520 320" role="img" aria-label="Scatter plot of simulated X against Y with conditional mean line"></svg></figure>
+        <figure><figcaption><strong>Estimation error</strong><span>Points (Y, X − E[X | Y])</span></figcaption><svg id="error-plot" viewBox="0 0 520 320" role="img" aria-label="Scatter plot of residual error against Y"></svg></figure>
+      </div>
+      <p class="fineprint">Each point is generated from independent standard normal draws. Scatterplots illustrate the theorem; a small observed sample correlation does not itself prove independence. The displayed correlation is undefined when the error has zero variance.</p>
+    </section>
+    <section class="panel" id="explain" aria-labelledby="explain-title">
+      <span class="section-label">02 / EXPLAIN</span><h2 id="explain-title">Why the formulas work</h2>
+      <div class="step-grid">
+        <article><span class="step-label">STEP 1 / THE BEST ESTIMATE</span><h3>Conditional expectation is MMSE</h3><p>For any square-integrable X, its conditional expectation minimizes mean-square error among functions of Y. Joint Gaussianity makes that optimal estimator affine.</p><p class="formula">E[X | Y = y] = ρ (σX / σY) y</p><p>Here both means are zero. With nonzero means, add μX and replace y by (y − μY).</p></article>
+        <article><span class="step-label">STEP 2 / THE ERROR</span><h3>Uncorrelated becomes independent</h3><p>Let e = X − E[X | Y]. The orthogonality principle gives E[eY] = 0. Because e and Y are jointly Gaussian, zero covariance implies <strong>independence</strong>.</p><p class="formula">e ⟂ Y  (independent for this Gaussian pair)</p><p>For arbitrary non-Gaussian variables, zero correlation alone does not establish independence.</p></article>
+        <article><span class="step-label">STEP 3 / THE DISTRIBUTION</span><h3>Conditioning shrinks uncertainty</h3><p>The error's distribution does not depend on Y. Consequently, the conditional law of X given Y = y is Gaussian with mean equal to the estimator and fixed variance.</p><p class="formula">Var(X | Y = y) = σX² (1 − ρ²)</p><p>This is also the minimum achievable mean-square error.</p></article>
+        <article><span class="step-label">STEP 4 / THE BOUNDARY</span><h3>When covariance is singular</h3><p>The joint covariance determinant is σX² σY² (1 − ρ²). At |ρ| = 1, X is an affine function of Y, the conditional variance is zero, and the joint pair has no ordinary two-dimensional density.</p><p class="formula">det(R) = σX² σY² (1 − ρ²)</p><p>Try the two endpoints of the correlation slider to observe this limiting case.</p></article>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="practice-title"><span class="section-label">03 / PRACTICE</span><h2 id="practice-title">Predict before you slide</h2>
+      <ol class="practice"><li>Set ρ = 0. What happens to the estimate after changing y? Why?</li><li>Set ρ = −0.8. Does a positive observed Y raise or lower the estimate of X?</li><li>Move |ρ| toward 1. How do the error spread and covariance determinant change?</li><li>Why is the sample error correlation <em>not</em> a mathematical proof of independence?</li></ol>
+      <details><summary>Show reasoning and answers</summary><p>At ρ = 0, E[X | Y = y] = 0 because jointly Gaussian and uncorrelated implies independence. For negative ρ, positive y decreases the estimate. As |ρ| approaches 1, conditional variance tends to zero and the determinant vanishes. Sample correlation is only a finite-sample statistic; the proof uses orthogonality plus joint Gaussianity.</p></details>
+    </section>
+    <section class="source-note" aria-labelledby="source-title"><h2 id="source-title">Source and scope</h2><p><strong>Course grounding:</strong> ENEE 620 Fall 2026, Lecture 20 (November 16, 2026), handwritten lecture pp. 1–4 (Gaussian MMSE / conditional Gaussianity), and pp. 5–10 (independent Gaussian representation and singular covariance). Reviewed with the corresponding November 16 class transcript. The source materials remain private; all explanations, numerical examples, and plots here were independently authored.</p><p><strong>Model conventions:</strong> real-valued scalar random variables; σX and σY denote standard deviations, ρ is Pearson correlation, variances are squared units, and plots use arbitrary units. This module is the scalar case of the lecture's vector equations. Source reviewed November 17, 2026.</p></section>
+  </main>
+  <footer><div class="container footer-row"><div class="footer-brand">ENEE 620 Learning Lab — Independent educational project, not an official UMD website.</div><div class="footer-links"><a href="../index.html">Course home</a><a href="https://rhhanson-umd.github.io/">Main portal</a><a href="https://github.com/RHHanson-UMD/ENEE-620">Source code</a></div></div></footer>
+</body>
+</html>
