@@ -28,3 +28,11 @@ publishes `site/` on pushes to `main`.
 - Keep algorithm math tested independently of the presentation layer.
 
 The course roadmap is illustrative, not an instructor syllabus.
+
+## Interactive lessons (newest course material first)
+
+- [Gaussian conditional estimation](site/visualizations/gaussian-conditioning.html) — original interactive scalar illustration of ENEE 620 Fall 2026 Lecture 20 (November 16). Adjustable correlation, observation, conditional MMSE, and residual plots.
+
+## Mathematical tests
+
+Run `npm test` with Node 20+. The test workflow runs on pull requests and pushes to `main`.

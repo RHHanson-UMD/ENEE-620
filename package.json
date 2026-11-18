@@ -1,0 +1,7 @@
+{
+  "name":"enee-620-learning-lab",
+  "private":true,
+  "type":"module",
+  "scripts":{"test":"node --test"},
+  "engines":{"node":">=20"}
+}
