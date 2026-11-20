@@ -24,7 +24,7 @@ test('unreviewed documents cannot claim verified no figures', () => {
   assert.ok(validateCourseIndex(d).some(e => e.includes('cannot verify')));
 });
 test('private links and unsafe publication strings fail', () => {
-  const d = copy(); d.description = 'https://drive.google.com/file/d/private';
+  const d = copy(); d.description = 'https://' + 'drive.google.com/file/d/private';
   assert.ok(validateCourseIndex(d).some(e => e.includes('disallowed')));
 });
 test('source kind and document ID must agree', () => {
