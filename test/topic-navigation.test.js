@@ -59,5 +59,8 @@ test('uploaded ENEE 620 cover is bundled with the homepage and accessible', () =
   assert.match(html, /<img src="\.\/assets\/ENEE%20620%20Cover\.png" alt="ENEE 620[^"]+" width="1248" height="1248"/);
   assert.match(html, /ENEE 620 · Independent Learning Lab/);
   assert.match(css, /\.course-cover img\{display:block;width:100%;height:auto/);
+  assert.match(css, /\.course-cover\{[^}]*max-width:340px/);
+  assert.match(css, /@media\(max-width:800px\)\{\.course-cover\{max-width:300px\}\}/);
+  assert.match(css, /@media\(max-width:480px\)\{\.course-cover\{max-width:260px\}\}/);
   assert.doesNotMatch(html, /ENEE 630 Cover|Advanced Digital Signal Processing/i);
 });
