@@ -103,3 +103,9 @@
 .chapter-group .demo-btn{flex:none}
 @media(max-width:700px){.chapter-group>summary{padding:18px;align-items:flex-start}.chapter-name{flex-direction:column;gap:5px}.chapter-name strong{font-size:17px}.chapter-count{font-size:11px}.chapter-lessons{padding:12px}.lesson-card{flex-direction:column;align-items:stretch;padding:17px}.lesson-unavailable{align-self:flex-start}.chapter-group .demo-btn{text-align:center}}
 @media(prefers-reduced-motion:reduce){.chapter-chevron{transition:none}}
+
+/* Course cover: original uploaded ENEE 620 artwork, responsive in both themes. */
+.course-cover{margin:0;min-width:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;box-shadow:var(--cardshadow)}
+.course-cover img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.course-cover figcaption{padding:11px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;letter-spacing:.08em;text-align:center}
+@media(max-width:800px){.course-cover{width:min(100%,470px)}}
