@@ -51,3 +51,13 @@ test('course branding cannot accidentally embed ENEE 630 cover', () => {
   assert.match(html, /COURSE WORKSPACE \/ ENEE 620/);
   assert.doesNotMatch(html, /ENEE 630 Cover|Advanced Digital Signal Processing/i);
 });
+
+
+test('uploaded ENEE 620 cover is bundled with the homepage and accessible', () => {
+  assert.ok(existsSync(new URL('../site/assets/ENEE%20620%20Cover.png', import.meta.url)), 'cover must be present in deployed site assets');
+  assert.match(html, /<figure class="course-cover">/);
+  assert.match(html, /<img src="\.\/assets\/ENEE%20620%20Cover\.png" alt="ENEE 620[^"]+" width="1248" height="1248"/);
+  assert.match(html, /ENEE 620 · Independent Learning Lab/);
+  assert.match(css, /\.course-cover img\{display:block;width:100%;height:auto/);
+  assert.doesNotMatch(html, /ENEE 630 Cover|Advanced Digital Signal Processing/i);
+});
