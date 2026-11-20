@@ -4,6 +4,7 @@ Interactive learning companion for University of Maryland ENEE-620.
 
 - Expected site: https://rhhanson-umd.github.io/ENEE-620/
 - Main learning portal: https://rhhanson-umd.github.io/
+- Project Manager status dashboard: https://github.com/RHHanson-UMD/ENEE-620/issues/23
 
 ## Local preview
 
@@ -27,7 +28,7 @@ publishes `site/` on pushes to `main`.
 - Even once officially released, confirm permission to republish solutions.
 - Keep algorithm math tested independently of the presentation layer.
 
-The course roadmap is illustrative, not an instructor syllabus.
+The course roadmap is illustrative, not an instructor syllabus. The homepage organizes major course topics as accessible expandable subtopic sections. Areas without page-level verification remain labeled as a topic index or planned roadmap; they are not claims of taught coverage.
 
 ## Interactive lessons (newest course material first)
 
