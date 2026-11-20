@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-20",
+  "description": "Public-safe metadata from verified ENEE 620 Fall 2026 notes. No source scans, instructor solutions, or private links.",
+  "documents": [
+    {
+      "id": "L20",
+      "source_kind": "lecture",
+      "source_title": "enee620-f26-lecture20.pdf",
+      "pages": 10,
+      "audit": "visually_audited",
+      "visually_audited_pages": [
+        1,
+        10
+      ],
+      "source_reviewed_at": "2026-11-17",
+      "sections": [
+        {
+          "id": "L20-S01",
+          "name": "Gaussian MMSE and linear MMSE estimation",
+          "pages": [
+            1,
+            3
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L20-S02",
+          "name": "Independent Gaussian representation and covariance diagonalization",
+          "pages": [
+            4,
+            6
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L20-S03",
+          "name": "Positive definite versus singular Gaussian covariance and joint density",
+          "pages": [
+            6,
+            10
+          ],
+          "math_verified": false
+        }
+      ],
+      "figures": [],
+      "figure_audit": "verified_none_found"
+    },
+    {
+      "id": "L14",
+      "source_kind": "lecture",
+      "source_title": "enee620-f26-lecture14.pdf",
+      "pages": 12,
+      "audit": "visually_audited",
+      "visually_audited_pages": [
+        1,
+        12
+      ],
+      "source_reviewed_at": "2026-11-17",
+      "sections": [
+        {
+          "id": "L14-S01",
+          "name": "Independence and correlation counterexample",
+          "pages": [
+            1,
+            6
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L14-S02",
+          "name": "Conditional probability laws and distributions",
+          "pages": [
+            6,
+            12
+          ],
+          "math_verified": false
+        }
+      ],
+      "figures": [
+        {
+          "id": "L14-F01",
+          "page": 5,
+          "label": "unnumbered",
+          "kind": "source_drawing",
+          "description": "Sine curve for dependent uncorrelated transform example"
+        },
+        {
+          "id": "L14-F02",
+          "page": 5,
+          "label": "unnumbered",
+          "kind": "source_drawing",
+          "description": "Cosine curve paired with sine transform example"
+        },
+        {
+          "id": "L14-F03",
+          "page": 9,
+          "label": "unnumbered",
+          "kind": "source_drawing",
+          "description": "Two-dimensional lower-left joint CDF event region"
+        }
+      ],
+      "figure_audit": "figures_cataloged"
+    },
+    {
+      "id": "L13",
+      "source_kind": "lecture",
+      "source_title": "enee620-f26-lecture13.pdf",
+      "pages": 11,
+      "audit": "visually_audited",
+      "visually_audited_pages": [
+        1,
+        11
+      ],
+      "source_reviewed_at": "2026-11-20",
+      "sections": [
+        {
+          "id": "L13-S01",
+          "name": "Random-vector characteristic function and linear mappings",
+          "pages": [
+            1,
+            3
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L13-S02",
+          "name": "Moment generating function and moment properties",
+          "pages": [
+            3,
+            4
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L13-S03",
+          "name": "Cross moments and independence factorization",
+          "pages": [
+            5,
+            8
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "L13-S04",
+          "name": "Measurable transformations of independent collections and product expectations",
+          "pages": [
+            9,
+            11
+          ],
+          "math_verified": false
+        }
+      ],
+      "figures": [
+        {
+          "id": "L13-F01",
+          "page": 9,
+          "label": "unnumbered",
+          "kind": "source_drawing",
+          "description": "Preimage and vector-space mapping illustration for independence of measurable transformations"
+        }
+      ],
+      "figure_audit": "figures_cataloged"
+    },
+    {
+      "id": "D10",
+      "source_kind": "discussion",
+      "source_title": "ENEE 620 Discussion 10.pdf",
+      "pages": 4,
+      "audit": "visually_audited",
+      "visually_audited_pages": [
+        1,
+        4
+      ],
+      "source_reviewed_at": "2026-11-20",
+      "sections": [
+        {
+          "id": "D10-S01",
+          "name": "Characteristic functions under transformations of independent variables",
+          "pages": [
+            1,
+            1
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "D10-S02",
+          "name": "Factorial moments of a discrete count distribution",
+          "pages": [
+            1,
+            2
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "D10-S03",
+          "name": "Symmetry and conditioning on a sum",
+          "pages": [
+            2,
+            3
+          ],
+          "math_verified": false
+        },
+        {
+          "id": "D10-S04",
+          "name": "Order-statistic event probabilities",
+          "pages": [
+            3,
+            4
+          ],
+          "math_verified": false
+        }
+      ],
+      "figures": [],
+      "figure_audit": "verified_none_found"
+    },
+    {
+      "id": "D09",
+      "source_kind": "discussion",
+      "source_title": "ENEE 620 Discussion 09.pdf",
+      "pages": 2,
+      "audit": "visually_audited",
+      "visually_audited_pages": [
+        1,
+        2
+      ],
+      "source_reviewed_at": "2026-11-17",
+      "sections": [],
+      "figures": [],
+      "figure_audit": "verified_none_found"
+    }
+  ]
+}
