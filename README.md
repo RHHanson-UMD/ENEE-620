@@ -28,7 +28,7 @@ publishes `site/` on pushes to `main`.
 - Even once officially released, confirm permission to republish solutions.
 - Keep algorithm math tested independently of the presentation layer.
 
-The course roadmap is illustrative, not an instructor syllabus. The homepage organizes major course topics as accessible expandable subtopic sections. Areas without page-level verification remain labeled as a topic index or planned roadmap; they are not claims of taught coverage.
+The course roadmap is illustrative, not an instructor syllabus. The homepage follows the ENEE 641-style expandable chapter/lesson catalog using verified lecture ranges rather than assumed textbook chapter numbers. Each chapter contains original learning-topic cards; only published lessons have working launch links. Planned material and unfinished source audits are labeled rather than presented as completed teaching.
 
 ## Interactive lessons (newest course material first)
 
