@@ -3,7 +3,7 @@
  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./assets/styles.css"><script src="./assets/course.js" defer></script></head><body>
  <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-row">
  <a class="brand" href="https://rhhanson-umd.github.io/"><span class="brand-mark">RH<span>.</span></span><span class="brand-label"><strong>LEARNING LAB</strong><small>RHHanson / UMD</small></span></a>
- <nav class="site-nav" aria-label="Primary"><a href="#path">Learning path</a><a href="#topics">Topics</a><a href="https://rhhanson-umd.github.io/#resources">Resources</a></nav>
+ <nav class="site-nav" aria-label="Primary"><a href="#path">Learning path</a><a href="#topics">Topics</a><a href="https://github.com/RHHanson-UMD/ENEE-620/issues/23">Project status</a></nav>
  <div class="nav-actions"><button class="theme-button" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">&#9790;</button><a class="nav-github" href="https://github.com/RHHanson-UMD/ENEE-620" target="_blank" rel="noopener noreferrer">Source &nearr;</a></div>
  </div></header>
  <main id="main"><section class="course-hero"><div class="container course-hero-grid"><div>
@@ -16,9 +16,62 @@
  <div class="path-card"><div class="step">02 / EXPERIMENT</div><h3>Interactive explorers</h3><p>Change parameters and see how the mathematics, intermediate states, and algorithms respond.</p><span class="status">Interactive examples</span></div>
  <div class="path-card"><div class="step">03 / VALIDATE</div><h3>Released walkthroughs</h3><p>Original guided solutions are published only after official release and permission to share.</p><span class="status">Release-gated content</span></div></div>
  </div></section>
- <section class="course-section" id="topics"><div class="container"><div class="section-label">02 / SUBJECT MAP</div><h2>What we'll explore<span class="period">.</span></h2><p class="section-copy">Planned topic areas. Materials and interactive modules will be added incrementally.</p><div class="topics"><div class="topic"><span>01</span>Random variables and processes</div><div class="topic"><span>02</span>Stationarity and autocorrelation</div><div class="topic"><span>03</span>Power spectral density</div><div class="topic"><span>04</span>Linear estimation and filtering</div></div>
- <div class="resources-prompt" style="margin-top:30px"><div><strong>Newest interactive lesson: Gaussian conditional estimation</strong><p>Lecture 20 (November 16, 2026). Change the correlation and observation, explore MMSE estimates and Gaussian error independence, and test singular covariance.</p></div><a class="demo-btn" href="./visualizations/gaussian-conditioning.html">Explore lesson &nearr;</a></div>
- <div class="note-row"><span aria-hidden="true">&#9432;</span> More interactive modules are being added newest-first. No homework-specific solutions are published.</div>
+ <section class="course-section" id="topics"><div class="container"><div class="section-label">02 / SUBJECT MAP</div><h2>Explore by topic<span class="period">.</span></h2><p class="section-copy">Open a major topic to reveal its subtopics. These are original learning-path summaries, not a reproduction of the instructor syllabus; a topic's appearance here does not establish that every part has been taught or verified.</p>
+ <p class="topic-guide">Keyboard: use <kbd>Tab</kbd> to focus a topic and <kbd>Enter</kbd> or <kbd>Space</kbd> to expand it. Topic details are readable without JavaScript.</p>
+ <div class="topic-accordion" aria-label="Course topics">
+  <details class="topic-group">
+   <summary><span class="topic-number">01</span><span class="topic-heading"><strong>Probability foundations</strong><small>From events to well-defined probability models</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Topic index · source-page review ongoing</p><ul class="subtopic-list">
+    <li><strong>Probability spaces and axioms</strong><span>Outcomes, events, sigma-fields, countable additivity</span></li>
+    <li><strong>Event operations and limits</strong><span>Set identities, limsup/liminf and continuity of probability</span></li>
+    <li><strong>Conditional probability</strong><span>Event conditioning, partitions and independence</span></li>
+   </ul></div>
+  </details>
+  <details class="topic-group">
+   <summary><span class="topic-number">02</span><span class="topic-heading"><strong>Random variables and distributions</strong><small>Representing outcomes and quantifying uncertainty</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Topic index · notation under verification</p><ul class="subtopic-list">
+    <li><strong>Distribution functions</strong><span>Measurable random variables, CDF conventions and discrete/continuous laws</span></li>
+    <li><strong>Expectation and integrability</strong><span>Indicators, simple variables, finite and non-finite expectations</span></li>
+    <li><strong>Moments and probability bounds</strong><span>Mean, variance, Markov, Chebyshev and moment-based bounds</span></li>
+   </ul></div>
+  </details>
+  <details class="topic-group">
+   <summary><span class="topic-number">03</span><span class="topic-heading"><strong>Random vectors, transforms and independence</strong><small>Joint laws, measurable mappings and relationships between variables</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Lecture 13 verified · older pages under review</p><ul class="subtopic-list">
+    <li><strong>Joint distributions and marginals</strong><span>Joint laws, integration regions and support</span></li>
+    <li><strong>Transformations of variables</strong><span>Measurable mappings, inverse images and Jacobian methods</span></li>
+    <li><strong>Independence and dependence</strong><span>Mutual versus pairwise independence; covariance versus independence</span></li>
+    <li><strong>Distribution transforms</strong><span>Characteristic functions, moment generating functions and mixed moments</span></li>
+   </ul></div>
+  </details>
+  <details class="topic-group">
+   <summary><span class="topic-number">04</span><span class="topic-heading"><strong>Conditional laws and expectation</strong><small>How new information changes what can be estimated</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Lecture-page audit continuing</p><ul class="subtopic-list">
+    <li><strong>Conditional distributions</strong><span>Conditioning on events and on observed random variables</span></li>
+    <li><strong>Conditional independence</strong><span>How factorization depends on what is observed</span></li>
+    <li><strong>Conditional expectation</strong><span>Information, linearity, nested conditioning and the tower property</span></li>
+    <li><strong>Orthogonality and estimation</strong><span>Minimum mean-square error and the role of observed data</span></li>
+   </ul></div>
+  </details>
+  <details class="topic-group" open>
+   <summary><span class="topic-number">05</span><span class="topic-heading"><strong>Gaussian vectors and estimation</strong><small>Explore the currently published interactive learning module</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Interactive lesson available</p><ul class="subtopic-list">
+    <li><strong>Joint Gaussian models</strong><span>Mean vectors, covariance, linear combinations and degenerate cases</span></li>
+    <li><strong>Conditional Gaussian estimation</strong><span>Conditional mean, MMSE, variance and residual independence</span></li>
+    <li><strong>Covariance structure</strong><span>Diagonalization, independent Gaussian coordinates and singular support</span></li>
+   </ul><a class="topic-lesson-link" href="./visualizations/gaussian-conditioning.html">Open Gaussian conditional estimation explorer <span aria-hidden="true">&rarr;</span></a></div>
+  </details>
+  <details class="topic-group">
+   <summary><span class="topic-number">06</span><span class="topic-heading"><strong>Random processes and spectral methods</strong><small>Future-oriented topic area, separated from confirmed lecture coverage</small></span><span class="topic-chevron" aria-hidden="true"></span></summary>
+   <div class="topic-content"><p class="topic-status">Planned roadmap · teaching status unverified</p><ul class="subtopic-list">
+    <li><strong>Random-process models</strong><span>Time-indexed random variables and process descriptions</span></li>
+    <li><strong>Stationarity and correlation</strong><span>Autocorrelation and stationarity conventions</span></li>
+    <li><strong>Spectral density</strong><span>Power spectral density and frequency-domain viewpoints</span></li>
+    <li><strong>Filtering and estimation</strong><span>Linear filtering concepts and process estimation</span></li>
+   </ul></div>
+  </details>
+ </div>
+ <div class="note-row"><span aria-hidden="true">&#9432;</span> Lecture and discussion audits are ongoing. See <a class="topic-source-link" href="https://github.com/RHHanson-UMD/ENEE-620/issues/2">source audit #2</a> and <a class="topic-source-link" href="https://github.com/RHHanson-UMD/ENEE-620/issues/23">Project Manager status #23</a> for verified progress. No restricted course files or homework solutions are hosted here.</div>
  </div></section>
  <section class="course-section alt"><div class="container"><div class="section-label">03 / EXTRA RESOURCES</div><h2>Go beyond the lesson<span class="period">.</span></h2><p class="section-copy">The main learning portal maintains a searchable, categorized directory of mathematics, programming, AI, and academic references.</p>
  <div class="resources-prompt"><div><strong>Shared Resource Library</strong><p>Math identities, programming documentation, university services, and more.</p></div><a class="demo-btn" href="https://rhhanson-umd.github.io/#resources">Browse references &nearr;</a></div>

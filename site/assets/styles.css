@@ -44,3 +44,34 @@
 .resources-prompt strong{font:600 19px 'Space Grotesk'}.resources-prompt p{font-size:13px;color:var(--muted);margin:5px 0 0}
 @media(max-width:800px){.course-hero-grid{grid-template-columns:1fr;gap:25px}.course-poster{min-height:200px}.poster-visual{height:55px}.path-grid{grid-template-columns:1fr}.path-card{min-height:175px}.path-card h3{margin-top:18px}}
 @media(max-width:600px){.course-hero{padding:60px 0 48px}.course-title{font-size:42px}.topics{grid-template-columns:1fr}.demo-card,.resources-prompt{flex-direction:column;align-items:start}.demo-btn{width:100%;text-align:center}}
+
+
+/* ENEE 620: accessible native topic/subtopic accordion (no JS needed). */
+.topic-guide{color:var(--faint);font-size:12px;margin:18px 0 0}
+.topic-guide kbd{font:600 11px 'Space Grotesk',monospace;background:var(--surface2);border:1px solid var(--line);padding:2px 5px;border-radius:4px}
+.topic-accordion{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:28px;align-items:start}
+.topic-group{border:1px solid var(--line);border-radius:13px;background:var(--surface);overflow:hidden;min-width:0}
+.topic-group[open]{border-color:var(--mint);box-shadow:0 4px 26px rgba(0,0,0,.07)}
+.topic-group summary{list-style:none;display:flex;gap:16px;align-items:center;padding:20px;cursor:pointer;min-height:96px}
+.topic-group summary::-webkit-details-marker{display:none}
+.topic-group summary:focus-visible{outline:3px solid var(--mint);outline-offset:-5px;border-radius:11px}
+.topic-group summary:hover{background:var(--surface2)}
+.topic-number{font:700 12px 'Space Grotesk',sans-serif;letter-spacing:.11em;color:var(--mint);flex:0 0 24px}
+.topic-heading{display:flex;flex-direction:column;gap:7px;flex:1;min-width:0}
+.topic-heading strong{font:600 17px/1.3 'Space Grotesk',sans-serif;color:var(--ink)}
+.topic-heading small{font-size:12px;line-height:1.45;color:var(--muted)}
+.topic-chevron{width:12px;height:12px;border-right:2px solid var(--mint);border-bottom:2px solid var(--mint);transform:rotate(45deg);transition:transform .18s;flex:none;margin:0 5px 5px}
+.topic-group[open] .topic-chevron{transform:rotate(225deg);margin:6px 5px 0}
+.topic-content{padding:0 20px 22px 60px;border-top:1px solid var(--line)}
+.topic-status{display:inline-block;margin:17px 0 10px;font:600 11px/1.4 'Space Grotesk',sans-serif;color:var(--mint)}
+.subtopic-list{padding:0;margin:0;list-style:none}
+.subtopic-list li{padding:12px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.subtopic-list strong{font-size:13px;color:var(--ink)}
+.subtopic-list span{font-size:12px;line-height:1.55;color:var(--muted)}
+.topic-lesson-link{display:inline-flex;align-items:center;gap:10px;margin-top:15px;padding:10px 13px;border-radius:8px;background:var(--mint);color:#08211f;font-size:12px;font-weight:700}
+[data-theme="light"] .topic-lesson-link{color:white}
+.topic-lesson-link:hover{filter:brightness(1.08)}
+.topic-source-link{text-decoration:underline;text-underline-offset:2px;color:var(--muted)}
+.topic-source-link:hover{color:var(--mint)}
+@media(max-width:800px){.topic-accordion{grid-template-columns:1fr}.topic-group summary{min-height:76px}}
+@media(max-width:600px){.topic-group summary{padding:15px;gap:12px}.topic-content{padding:0 15px 18px 50px}.topic-heading strong{font-size:15px}}
